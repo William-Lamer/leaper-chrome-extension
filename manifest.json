@@ -1,35 +1,33 @@
 {
     "name": "Search Faster",
-    "description": "Gives customizable shortcuts to search quickly",
+    "manifest_version": 3,
     "version": "1.0",
-    "manifest_version": 3, 
+    "description": "Gives customizable shortcuts to search quickly",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
     "action": {
         "default_popup": "hello.html",
         "default_icon": "icon.png"
     },
-    "permissions": ["activeTab", "scripting"],
-    "content_scripts": [
-        {
-            "matches": ["*://www.google.com/search*"],
-            "js": ["content.js"]
+    "commands": {
+        "open_first_result": {
+            "suggested_key": {
+                "default": "Alt+1",
+                "mac": "Command+Shift+1"
+            },
+            "description": "Gets the first search result"
         }
-    ],
+    },
     "background": {
         "service_worker": "background.js"
     },
-
-    "commands": {
-        "open-first-result": {
-            "suggested_key":{
-                "default": "Alt+1",
-                "mac": "Option+1"
-            },
-            "description": "Gets the first search result on the current page."
-            }
-        }
-}  
-
-
-
-
+    "content_scripts":[
+        {
+            "matches": ["*://www.google.com/search*"],
+            "js": ["content.js"]
+        } 
+    ]
+}
 

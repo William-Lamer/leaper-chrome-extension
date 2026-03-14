@@ -1,8 +1,7 @@
-document.addEventListener("keydown", function(event) {
-    if (event.altKey && event.key === "1") {
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === "openFirst"){
         const firstResult = document.querySelector(".zReHs");
-
-        if (firstResult) {
+        if (firstResult){
             firstResult.click();
         }
     }
