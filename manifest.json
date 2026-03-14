@@ -1,0 +1,35 @@
+{
+    "name": "Search Faster",
+    "description": "Gives customizable shortcuts to search quickly",
+    "version": "1.0",
+    "manifest_version": 3, 
+    "action": {
+        "default_popup": "hello.html",
+        "default_icon": "icon.png"
+    },
+    "permissions": ["activeTab", "scripting"],
+    "content_scripts": [
+        {
+            "matches": ["*://www.google.com/search*"],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "commands": {
+        "open-first-result": {
+            "suggested_key":{
+                "default": "Alt+1",
+                "mac": "Option+1"
+            },
+            "description": "Gets the first search result on the current page."
+            }
+        }
+}  
+
+
+
+
+
