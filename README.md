@@ -27,6 +27,7 @@ Badges disappear the moment you release `Alt`. Results glow briefly on activatio
     </td>
   </tr>
 </table>
+
 --- 
 
 ## Why I built this
