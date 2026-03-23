@@ -52,7 +52,7 @@ leaper-chrome-extension/
 - **CSS injection:** All hint styles are injected once as a `<style>` tag rather than written inline per element, keeping the DOM clean and styles easy to update
 - **Key-repeat guard:** — `e.repeat` prevents the browser's hold-key repeat from re-rendering badges on every tick
 - **Capture-phase listeners:** — event listeners registered with `{ capture: true }` intercept keystrokes before the page's own JS, preventing interference on JS-heavy pages
-**Absolute-positioned badges:** Badges use `position: absolute` with `window.scrollX/Y + getBoundingClientRect()` to anchor them to document coordinates rather than the viewport; they move with the page naturally with zero JS and no scroll handler needed
+- **Absolute-positioned badges:** Badges use `position: absolute` with `window.scrollX/Y + getBoundingClientRect()` to anchor them to document coordinates rather than the viewport; they move with the page naturally with zero JS and no scroll handler needed
 - **URL safety guard:** Background.js rejects any non-`http(s)` message before creating a tab
 - **Only active on search:** The extension is only active on search pages. Guarantees privacy and performance. 
 ---
